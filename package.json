@@ -33,7 +33,7 @@
     "nopt": "4.0.3"
   },
   "devDependencies": {
-    "jshint": "2.6.x"
+    "jshint": "2.11.1"
   },
   "scripts": {
     "test": "jshint bin/* src/*.js"
