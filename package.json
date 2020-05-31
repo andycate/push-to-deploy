@@ -28,6 +28,7 @@
     "push-to-deploy": "./bin/push-to-deploy"
   },
   "dependencies": {
+    "crypto-js": "^4.0.0",
     "github-notifier": "2.2.0",
     "js-yaml": "3.14.0",
     "nopt": "4.0.3"

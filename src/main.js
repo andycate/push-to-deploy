@@ -1,6 +1,7 @@
 var exec = require("child_process").exec;
 var http = require("http");
 var Notifier = require("github-notifier").Notifier;
+var hmacsha = require('crypto-js/hmac-sha1');
 
 function alwaysArray(arrayOrSomethingElse) {
   if (Array.isArray(arrayOrSomethingElse)) {
@@ -24,7 +25,9 @@ module.exports = function(configs, options) {
   configs.forEach(function(config) {
     Object.keys(config).forEach(function(eventName) {
       var commandsTpl = alwaysArray(config[eventName]).join(";");
-      var eventFn = function(data) {
+      var eventFn = function(data, headers) {
+        console.log(headers);
+        // hmacsha(JSON.parse(data.payload), 'supersecret')
         console.log(data);
         var commands;
         try {
