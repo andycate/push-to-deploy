@@ -1,6 +1,6 @@
 var exec = require("child_process").exec;
 var http = require("http");
-var Notifier = require("git-notifier").Notifier;
+var Notifier = require("github-notifier").Notifier;
 
 function alwaysArray(arrayOrSomethingElse) {
   if (Array.isArray(arrayOrSomethingElse)) {
@@ -25,6 +25,7 @@ module.exports = function(configs, options) {
     Object.keys(config).forEach(function(eventName) {
       var commandsTpl = alwaysArray(config[eventName]).join(";");
       var eventFn = function(data) {
+        console.log(data);
         var commands;
         try {
           commands = commandsTpl.replace(/{{([^}]+)}}/g, function(match, key) {

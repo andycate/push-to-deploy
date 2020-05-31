@@ -28,9 +28,9 @@
     "push-to-deploy": "./bin/push-to-deploy"
   },
   "dependencies": {
-    "git-notifier": "2.1.x",
-    "js-yaml": "3.2.x",
-    "nopt": "3.0.x"
+    "github-notifier": "2.2.0",
+    "js-yaml": "3.14.0",
+    "nopt": "4.0.3"
   },
   "devDependencies": {
     "jshint": "2.6.x"
